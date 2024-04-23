@@ -226,6 +226,12 @@ function loadSettings() {
   let notesString = '';
   for(let i = 0; i < currentMidi.tracks.length; i++) {
     if(settings.tracks[i]) {
+
+      console.log("currentMidi.tracks[i].notes[note].time >>> ", currentMidi.tracks[0].notes[note].time);
+      console.log("currentMidi.tracks[i].notes[note].time >>> ", currentMidi.tracks[0].notes[note].name);
+      console.log("currentMidi.tracks[i].notes[note].time >>> ", currentMidi.tracks[0].notes[note].velocity);
+      console.log("currentMidi.tracks[i].notes[note].time >>> ", currentMidi.tracks[0].notes[note].duration);
+      
       for(let note = 0; note < currentMidi.tracks[i].notes.length; note++) {
         unChartedNotes.push([
           currentMidi.tracks[i].notes[note].ticks, //0
@@ -237,6 +243,7 @@ function loadSettings() {
           currentMidi.tracks[i].notes[note].duration, //6
           currentMidi.tracks[i].notes[note].durationTicks, //7
           currentMidi.tracks[i].notes[note].midi, //8
+          
           i, //9
           note //10
         ]);
