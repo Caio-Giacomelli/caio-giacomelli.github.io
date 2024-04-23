@@ -44,6 +44,7 @@ function parseFile(file) {
   reader.onload = function(e) {
     const midi = new Midi(e.target.result);
     currentMidi = midi.toJSON();
+    console.log("JSON MID >>> ", currentMidi);
     currentMidi.duration = midi.duration;
     currentMidi.durationTicks = midi.durationTicks;
     currentMidi.name = midi.name;
